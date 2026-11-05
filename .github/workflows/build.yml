@@ -1,0 +1,16 @@
+name: Build Geode Mod
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        uses: geode-sdk/build@main
+        with:
+          bindings: 2.2081
